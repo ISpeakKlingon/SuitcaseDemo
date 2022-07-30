@@ -701,6 +701,7 @@ GameObject:
   - component: {fileID: 722868208}
   - component: {fileID: 722868207}
   - component: {fileID: 722868210}
+  - component: {fileID: 722868212}
   - component: {fileID: 722868211}
   m_Layer: 0
   m_Name: Button_Handle
@@ -718,7 +719,7 @@ Transform:
   m_GameObject: {fileID: 722868205}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.0163, y: 0.145, z: -0.1318}
-  m_LocalScale: {x: 0.045406, y: 0.045406, z: 0.045406}
+  m_LocalScale: {x: 0.022703, y: 0.022703, z: 0.022703}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1675650580}
@@ -821,10 +822,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   outlineMode: 1
   outlineColor: {r: 0, g: 0.36078432, b: 1, a: 1}
-  outlineWidth: 10
+  outlineWidth: 5
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
+--- !u!114 &722868212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 722868205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e484b11c7fca834d9d5f9c23cf743e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainCamera: {fileID: 75407566}
 --- !u!1 &834466775
 GameObject:
   m_ObjectHideFlags: 0
@@ -1185,6 +1199,7 @@ GameObject:
   - component: {fileID: 1342719178}
   - component: {fileID: 1342719177}
   - component: {fileID: 1342719176}
+  - component: {fileID: 1342719180}
   - component: {fileID: 1342719174}
   - component: {fileID: 1342719179}
   m_Layer: 0
@@ -1203,7 +1218,7 @@ Transform:
   m_GameObject: {fileID: 1342719172}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.23300004, y: 0.313, z: 0.0010000467}
-  m_LocalScale: {x: 0.045406, y: 0.045406, z: 0.045406}
+  m_LocalScale: {x: 0.022703, y: 0.022703, z: 0.022703}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1695354295}
@@ -1223,7 +1238,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   outlineMode: 1
   outlineColor: {r: 0, g: 0.36078432, b: 1, a: 1}
-  outlineWidth: 10
+  outlineWidth: 5
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
@@ -1308,6 +1323,19 @@ MonoBehaviour:
   suitcaseBody: {fileID: 167204843}
   bodyPointOfFocus: {fileID: 2038267107}
   interiorPointOfFocus: {fileID: 1947847940}
+--- !u!114 &1342719180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1342719172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e484b11c7fca834d9d5f9c23cf743e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainCamera: {fileID: 75407566}
 --- !u!1 &1525901103
 GameObject:
   m_ObjectHideFlags: 0
