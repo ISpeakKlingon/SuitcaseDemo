@@ -36,9 +36,6 @@ public class CameraController : MonoBehaviour
         _posA = transform.position;
         _posB = newPos;
 
-
-
-
         yield return new WaitForSeconds(delayTime);
         float startTime = Time.time;
         while (Time.time - startTime <= 1)
