@@ -79,6 +79,8 @@ public class ButtonFader : MonoBehaviour
         }
         else
         {
+            _buttonController.DeactivateButton();
+
             while (Time.time - startTime <= 1)
             {
                 _color.a = Mathf.Lerp(_visibleAlpha, 0, Time.time - startTime);

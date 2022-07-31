@@ -58,12 +58,12 @@ public class ButtonController : MonoBehaviour
     private void OnMouseDown()
     {
         // turn off collider
-        DeactivateButton();
+        //DeactivateButton(); //switching this to ButtonFader script
 
         GetLinkedState(StateToLink);
     }
 
-    private void DeactivateButton()
+    public void DeactivateButton()
     {
         _collider.enabled = false;
     }
