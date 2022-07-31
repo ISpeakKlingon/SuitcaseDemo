@@ -9,9 +9,15 @@ public class SuitcaseHandleUpState : SuitcaseBaseState
         GameManager.Instance.UpdateGameState(GameManager.GameState.HandleUp);
 
         // animate handle up
-        //SuitcaseHandleAnimator = suitcaseHandle.GetComponent<Animator>();
         SuitcaseHandleAnimator = suitcase.GetComponent<Animator>();
         SuitcaseHandleAnimator.SetTrigger("handleUp");
+
+        // move camera to new focus
+        CameraController = suitcase.GetComponentInParent<CameraController>();
+        HandlePos = GameManager.Instance.Handle.transform.position;
+        HandlePointOfFocus = GameManager.Instance.HandlePointOfFocus;
+        //CameraController.MoveCamera(CameraDelayTime, HandlePos, HandlePointOfFocus);
+        CameraController.DebugTest("Hi there CameraController. This is the SuitcaseHandleUpState script pingin you!"); //this line (and one above) are causing error.
     }
 
     public override void UpdateState(SuitcaseStateManager suitcase)

@@ -18,6 +18,7 @@ public class CameraController : MonoBehaviour
     public Transform suitcaseHandle;
 
     private Transform target;
+    private Vector3 _receivedPos;
 
     // Start is called before the first frame update
     void Start()
@@ -28,7 +29,7 @@ public class CameraController : MonoBehaviour
         //define first target
         target = suitcaseBody;
 
-        StartCoroutine(WaitAndMove(delayTime, _startingPos, target));
+        //StartCoroutine(WaitAndMove(delayTime, _startingPos, target));
     }
 
     IEnumerator WaitAndMove(float delayTime, Vector3 newPos, Transform target)
@@ -57,6 +58,11 @@ public class CameraController : MonoBehaviour
     public void MoveCamera(float delayTime, Vector3 newPos, Transform target)
     {
         StartCoroutine(WaitAndMove(delayTime, newPos, target));
+    }
+
+    public void DebugTest(string message)
+    {
+        Debug.Log(message);
     }
 
 }

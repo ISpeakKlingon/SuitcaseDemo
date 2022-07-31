@@ -11,6 +11,18 @@ public class GameManager : MonoBehaviour
 
     public static event Action<GameState> OnGameStateChanged;
 
+    [Header("Points of Focus")]
+    public Transform BodyPointOfFocus;
+    public Transform HandlePointOfFocus;
+    public Transform InteriorPointOfFocus;
+    public Transform EdgePointOfFocus;
+
+    [Header("Camera Positions")]
+    public GameObject Body;
+    public GameObject Handle;
+    public GameObject Interior;
+    public GameObject Edge;
+
     private void Awake()
     {
         Instance = this;
