@@ -28,6 +28,7 @@ public class GameManager : MonoBehaviour
 
     [Space(10)] // 10 pixels of spacing here.
     public bool HandleUp;
+    public bool SuitcaseOpen;
 
     [Header("Product Copy")]
     public string CurrentHeader;

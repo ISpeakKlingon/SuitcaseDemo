@@ -14,6 +14,9 @@ public class SuitcaseOpenState : SuitcaseBaseState
         GameManager.Instance.CurrentDescription = GameManager.Instance.InteriorDescription;
 
         // animate suitcase to open up
+        SuitcaseHandleAnimator = suitcase.GetComponent<Animator>();
+        SuitcaseHandleAnimator.SetTrigger("open");
+        GameManager.Instance.SuitcaseOpen = true;
 
         // move camera to new focus
         CameraController = GameManager.Instance.MainCamera.GetComponent<CameraController>();

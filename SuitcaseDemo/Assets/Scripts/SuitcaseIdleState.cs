@@ -17,6 +17,14 @@ public class SuitcaseIdleState : SuitcaseBaseState
             GameManager.Instance.HandleUp = false;
         }
 
+        // if suitcase is open, close it
+        if(GameManager.Instance.SuitcaseOpen == true)
+        {
+            SuitcaseHandleAnimator = suitcase.GetComponent<Animator>();
+            SuitcaseHandleAnimator.SetTrigger("close");
+            GameManager.Instance.SuitcaseOpen = false;
+        }
+
         // move camera to new focus
         CameraController = GameManager.Instance.MainCamera.GetComponent<CameraController>();
         BodyPos = GameManager.Instance.Body.transform.position;
