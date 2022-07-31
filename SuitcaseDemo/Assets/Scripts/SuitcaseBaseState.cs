@@ -28,6 +28,8 @@ public abstract class SuitcaseBaseState
 
     public float CameraDelayTime;
 
+    //public bool HandleUp;
+
     public abstract void EnterState(SuitcaseStateManager suitcase);
     public abstract void UpdateState(SuitcaseStateManager suitcase);
 }

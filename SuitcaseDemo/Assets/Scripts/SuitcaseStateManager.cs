@@ -32,4 +32,9 @@ public class SuitcaseStateManager : MonoBehaviour
         // calls EnterState logic from the new state one time
         state.EnterState(this);
     }
+
+    public void SwitchStateToIdle()
+    {
+        SwitchState(IdleState);
+    }
 }

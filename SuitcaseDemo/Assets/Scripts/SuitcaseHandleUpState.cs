@@ -11,6 +11,8 @@ public class SuitcaseHandleUpState : SuitcaseBaseState
         // animate handle up
         SuitcaseHandleAnimator = suitcase.GetComponent<Animator>();
         SuitcaseHandleAnimator.SetTrigger("handleUp");
+        //HandleUp = true;
+        GameManager.Instance.HandleUp = true;
 
         // move camera to new focus
         CameraController = GameManager.Instance.MainCamera.GetComponent<CameraController>();

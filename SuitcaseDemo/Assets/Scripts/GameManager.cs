@@ -26,6 +26,10 @@ public class GameManager : MonoBehaviour
     [Space(10)] // 10 pixels of spacing here.
     public GameObject MainCamera;
 
+    [Space(10)] // 10 pixels of spacing here.
+    public bool HandleUp;
+
+
     private void Awake()
     {
         Instance = this;
