@@ -43,6 +43,7 @@ public class GameManager : MonoBehaviour
         {
             case GameState.Idle:
                 HandleIdle();
+                Debug.Log("game manager set state as Idle State.");
                 break;
             case GameState.Inspected:
                 break;

@@ -14,6 +14,8 @@ public class ButtonController : MonoBehaviour
 
     public StateToActivate StateToLink;
 
+    private SphereCollider _collider;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +23,8 @@ public class ButtonController : MonoBehaviour
         _inspectedState = SuitcaseStateManager.InspectedState;
         _openState = SuitcaseStateManager.OpenState;
         _handleUpState = SuitcaseStateManager.HandleUpState;
+
+        _collider = GetComponent<SphereCollider>();
     }
 
     private void GetLinkedState(StateToActivate newState)
@@ -30,6 +34,7 @@ public class ButtonController : MonoBehaviour
         switch (newState)
         {
             case StateToActivate.IdleState:
+                Debug.Log("ButtonController activated sphere collider.");
                 SuitcaseStateManager.SwitchState(_idleState);
                 Debug.Log("button thinks the linked state is IdleState.");
                 break;
@@ -52,7 +57,20 @@ public class ButtonController : MonoBehaviour
 
     private void OnMouseDown()
     {
+        // turn off collider
+        DeactivateButton();
+
         GetLinkedState(StateToLink);
+    }
+
+    private void DeactivateButton()
+    {
+        _collider.enabled = false;
+    }
+
+    public void ActivateButton()
+    {
+        _collider.enabled = true;
     }
 
     public enum StateToActivate

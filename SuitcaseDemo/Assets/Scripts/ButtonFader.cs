@@ -20,6 +20,8 @@ public class ButtonFader : MonoBehaviour
     private float _visibleOutlineAlpha;
     public float outlineAlpha = 255f;
 
+    private ButtonController _buttonController;
+
     private void Awake()
     {
         GameManager.OnGameStateChanged += GameManagerOnOnGameStateChanged;
@@ -51,6 +53,8 @@ public class ButtonFader : MonoBehaviour
         _color.a = buttonAlpha/_maxAlpha;
         _visibleAlpha = _color.a;
         button.material.color = _color;
+
+        _buttonController = GetComponent<ButtonController>();
     }
 
     IEnumerator WaitAndFade(float delayTime, bool visible)
@@ -70,6 +74,8 @@ public class ButtonFader : MonoBehaviour
 
                 yield return 1;
             }
+
+            _buttonController.ActivateButton();
         }
         else
         {
