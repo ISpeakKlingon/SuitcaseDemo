@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class ButtonFader : MonoBehaviour
 {
-    public float buttonAlpha = 255f;
+    public float buttonAlpha = 40f;
     private float _maxAlpha = 255f;
     private float _visibleAlpha;
     public float delayTime;
@@ -13,6 +13,12 @@ public class ButtonFader : MonoBehaviour
     [SerializeField] private Renderer button;
 
     private Color _color;
+
+    //outline variables
+    [SerializeField] private Outline outline;
+    private Color _outlineColor;
+    private float _visibleOutlineAlpha;
+    public float outlineAlpha = 255f;
 
     private void Awake()
     {
@@ -34,21 +40,18 @@ public class ButtonFader : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //get reference to outline script on button model
+        outline = GetComponentInChildren<Outline>();
+        _outlineColor = outline.OutlineColor;
+        _outlineColor.a = outlineAlpha / _maxAlpha;
+        _visibleOutlineAlpha = _outlineColor.a;
+        outline.OutlineColor = _outlineColor;
+
         _color = button.material.color;
         _color.a = buttonAlpha/_maxAlpha;
         _visibleAlpha = _color.a;
         button.material.color = _color;
     }
-
-    /*public void FadeOutButton()
-    {
-        _color.a = Mathf.Lerp(buttonAlpha, 0, 1f);
-    }
-
-    public void FadeInButton()
-    {
-        _color.a = Mathf.Lerp(0, buttonAlpha, 1f);
-    }*/
 
     IEnumerator WaitAndFade(float delayTime, bool visible)
     {
@@ -61,6 +64,10 @@ public class ButtonFader : MonoBehaviour
                 _color.a = Mathf.Lerp(0, _visibleAlpha, Time.time - startTime);
                 button.material.color = _color;
 
+                // outline fade
+                _outlineColor.a = Mathf.Lerp(0, _visibleOutlineAlpha, Time.time - startTime);
+                outline.OutlineColor = _outlineColor;
+
                 yield return 1;
             }
         }
@@ -71,34 +78,13 @@ public class ButtonFader : MonoBehaviour
                 _color.a = Mathf.Lerp(_visibleAlpha, 0, Time.time - startTime);
                 button.material.color = _color;
 
+                // outline fade
+                _outlineColor.a = Mathf.Lerp(_visibleOutlineAlpha, 0, Time.time - startTime);
+                outline.OutlineColor = _outlineColor;
+
                 yield return 1;
             }
         }
-
-        /*if (visible)
-        {
-            int i = 0;
-
-            while (i < 255)
-            {
-                _color.a = _color.a + 1;
-                button.material.color = _color;
-                i = i + 1;
-                yield return new WaitForSeconds(1f);
-            }
-        }
-        else
-        {
-            int i = 255;
-
-            while (i < 0)
-            {
-                _color.a = _color.a + 1;
-                button.material.color = _color;
-                i = i + 1;
-                yield return new WaitForSeconds(1f);
-            }
-        }*/
     }
 
     private void OnDestroy()
