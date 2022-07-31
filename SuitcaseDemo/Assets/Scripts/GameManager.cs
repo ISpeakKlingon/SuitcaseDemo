@@ -23,6 +23,9 @@ public class GameManager : MonoBehaviour
     public GameObject Interior;
     public GameObject Edge;
 
+    [Space(10)] // 10 pixels of spacing here.
+    public GameObject MainCamera;
+
     private void Awake()
     {
         Instance = this;

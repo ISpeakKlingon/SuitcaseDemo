@@ -13,11 +13,11 @@ public class SuitcaseHandleUpState : SuitcaseBaseState
         SuitcaseHandleAnimator.SetTrigger("handleUp");
 
         // move camera to new focus
-        CameraController = suitcase.GetComponentInParent<CameraController>();
+        CameraController = GameManager.Instance.MainCamera.GetComponent<CameraController>();
         HandlePos = GameManager.Instance.Handle.transform.position;
         HandlePointOfFocus = GameManager.Instance.HandlePointOfFocus;
-        //CameraController.MoveCamera(CameraDelayTime, HandlePos, HandlePointOfFocus);
-        CameraController.DebugTest("Hi there CameraController. This is the SuitcaseHandleUpState script pingin you!"); //this line (and one above) are causing error.
+        CameraController.MoveCamera(CameraDelayTime, HandlePos, HandlePointOfFocus);
+        //CameraController.DebugTest("Hi there CameraController. This is the SuitcaseHandleUpState script pingin you!");
     }
 
     public override void UpdateState(SuitcaseStateManager suitcase)
