@@ -805,6 +805,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e93e7684018081b4497630a0d59df699, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HeaderText: {fileID: 1306257528}
+  DescriptionText: {fileID: 1650843441}
 --- !u!1 &483271803
 GameObject:
   m_ObjectHideFlags: 0
@@ -845,6 +847,14 @@ MonoBehaviour:
   Edge: {fileID: 885559809}
   MainCamera: {fileID: 75407566}
   HandleUp: 0
+  CurrentHeader: 
+  CurrentDescription: 
+  HandleHeader: Reinforced Steel expanding handle
+  HandleDescription: We took our classic suitcases and added a built-in zipper expansion
+    for extra packing space.
+  InteriorHeader: Room for more
+  InteriorDescription: We took our classic suitcases and added a built-in zipper
+    expansion for extra packing space.
 --- !u!4 &483271805
 Transform:
   m_ObjectHideFlags: 0

@@ -16,6 +16,8 @@ public class ButtonController : MonoBehaviour
 
     private SphereCollider _collider;
 
+    private ButtonFader _buttonFader;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +27,8 @@ public class ButtonController : MonoBehaviour
         _handleUpState = SuitcaseStateManager.HandleUpState;
 
         _collider = GetComponent<SphereCollider>();
+
+        _buttonFader = GetComponent<ButtonFader>();
     }
 
     private void GetLinkedState(StateToActivate newState)
@@ -61,6 +65,18 @@ public class ButtonController : MonoBehaviour
         //DeactivateButton(); //switching this to ButtonFader script
 
         GetLinkedState(StateToLink);
+    }
+
+    private void OnMouseEnter()
+    {
+        // turn button alpha up
+        _buttonFader.MaxAlpha();
+    }
+
+    private void OnMouseExit()
+    {
+        // turn button alpha down
+        _buttonFader.ResetAlpha();
     }
 
     public void DeactivateButton()

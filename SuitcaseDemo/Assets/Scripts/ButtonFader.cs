@@ -95,6 +95,20 @@ public class ButtonFader : MonoBehaviour
         }
     }
 
+    public void MaxAlpha()
+    {
+        _color.a = 1;
+        _visibleAlpha = _color.a;
+        button.material.color = _color;
+    }
+
+    public void ResetAlpha()
+    {
+        _color.a = buttonAlpha / _maxAlpha;
+        _visibleAlpha = _color.a;
+        button.material.color = _color;
+    }
+
     private void OnDestroy()
     {
         Destroy(button.material);

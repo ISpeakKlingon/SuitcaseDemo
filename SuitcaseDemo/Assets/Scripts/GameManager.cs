@@ -29,6 +29,15 @@ public class GameManager : MonoBehaviour
     [Space(10)] // 10 pixels of spacing here.
     public bool HandleUp;
 
+    [Header("Product Copy")]
+    public string CurrentHeader;
+    public string CurrentDescription;
+    [Space(5)] // 5 pixels of spacing here.
+    public string HandleHeader;
+    public string HandleDescription;
+    [Space(5)] // 5 pixels of spacing here.
+    public string InteriorHeader;
+    public string InteriorDescription;
 
     private void Awake()
     {

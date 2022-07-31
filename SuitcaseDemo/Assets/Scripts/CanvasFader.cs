@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class CanvasFader : MonoBehaviour
 {
@@ -10,6 +11,11 @@ public class CanvasFader : MonoBehaviour
     private float delayTime;
     private float _visibleAlpha = 1f;
 
+    private string _header;
+    private string _description;
+
+    public TextMeshProUGUI HeaderText;
+    public TextMeshProUGUI DescriptionText;
 
     private void Awake()
     {
@@ -37,9 +43,18 @@ public class CanvasFader : MonoBehaviour
     IEnumerator WaitAndFade(float delayTime, bool visible)
     {
         yield return new WaitForSeconds(delayTime);
+
         float startTime = Time.time;
         if (visible)
         {
+            // get text to display from Game Manager
+            _header = GameManager.Instance.CurrentHeader;
+            _description = GameManager.Instance.CurrentDescription;
+
+            // change UI text to display the proper text
+            HeaderText.text = _header;
+            DescriptionText.text = _description;
+
             while (Time.time - startTime <= 1)
             {
                 _canvasUIGroup.alpha = Mathf.Lerp(0, _visibleAlpha, Time.time - startTime);

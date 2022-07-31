@@ -8,6 +8,10 @@ public class SuitcaseHandleUpState : SuitcaseBaseState
         Debug.Log("Hello from the Handle Up State");
         GameManager.Instance.UpdateGameState(GameManager.GameState.HandleUp);
 
+        // change UI text
+        GameManager.Instance.CurrentHeader = GameManager.Instance.HandleHeader;
+        GameManager.Instance.CurrentDescription = GameManager.Instance.HandleDescription;
+
         // animate handle up
         SuitcaseHandleAnimator = suitcase.GetComponent<Animator>();
         SuitcaseHandleAnimator.SetTrigger("handleUp");
