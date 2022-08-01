@@ -30,6 +30,8 @@ public abstract class SuitcaseBaseState
 
     //public bool HandleUp;
 
+    public Collider SpinnerCollider;
+
     public abstract void EnterState(SuitcaseStateManager suitcase);
     public abstract void UpdateState(SuitcaseStateManager suitcase);
 }

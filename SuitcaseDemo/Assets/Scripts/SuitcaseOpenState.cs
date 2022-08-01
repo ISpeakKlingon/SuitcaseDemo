@@ -13,6 +13,11 @@ public class SuitcaseOpenState : SuitcaseBaseState
         GameManager.Instance.CurrentHeader = GameManager.Instance.InteriorHeader;
         GameManager.Instance.CurrentDescription = GameManager.Instance.InteriorDescription;
 
+        // turn off box collider on SuitcaseParent to disable spinning
+        SpinnerCollider = suitcase.GetComponent<BoxCollider>();
+        SpinnerCollider.enabled = false;
+
+
         // animate suitcase to open up
         SuitcaseHandleAnimator = suitcase.GetComponent<Animator>();
         SuitcaseHandleAnimator.SetTrigger("open");

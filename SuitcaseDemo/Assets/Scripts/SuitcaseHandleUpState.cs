@@ -12,6 +12,10 @@ public class SuitcaseHandleUpState : SuitcaseBaseState
         GameManager.Instance.CurrentHeader = GameManager.Instance.HandleHeader;
         GameManager.Instance.CurrentDescription = GameManager.Instance.HandleDescription;
 
+        // turn off box collider on SuitcaseParent to disable spinning
+        SpinnerCollider = suitcase.GetComponent<BoxCollider>();
+        SpinnerCollider.enabled = false;
+
         // animate handle up
         SuitcaseHandleAnimator = suitcase.GetComponent<Animator>();
         SuitcaseHandleAnimator.SetTrigger("handleUp");

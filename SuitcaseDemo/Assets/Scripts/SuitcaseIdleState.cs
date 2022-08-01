@@ -30,6 +30,11 @@ public class SuitcaseIdleState : SuitcaseBaseState
         BodyPos = GameManager.Instance.Body.transform.position;
         BodyPointOfFocus = GameManager.Instance.BodyPointOfFocus;
         CameraController.MoveCamera(CameraDelayTime, BodyPos, BodyPointOfFocus);
+
+        // turn off box collider on SuitcaseParent to disable spinning
+        SpinnerCollider = suitcase.GetComponent<BoxCollider>();
+        SpinnerCollider.enabled = true;
+
     }
 
     public override void UpdateState(SuitcaseStateManager suitcase)
