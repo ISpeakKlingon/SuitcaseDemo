@@ -23,13 +23,13 @@ public class CameraController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _startingPos = startingView.transform.position;
+        /*_startingPos = startingView.transform.position;
         _handlePos = handleView.transform.position;
 
         //define first target
         target = suitcaseBody;
 
-        //StartCoroutine(WaitAndMove(delayTime, _startingPos, target));
+        //StartCoroutine(WaitAndMove(delayTime, _startingPos, target));*/
     }
 
     IEnumerator WaitAndMove(float delayTime, Vector3 newPos, Transform target)
