@@ -365,9 +365,9 @@ Camera:
   m_projectionMatrixMode: 2
   m_GateFitMode: 2
   m_FOVAxisMode: 0
-  m_SensorSize: {x: 21, y: 15.2}
+  m_SensorSize: {x: 4.8, y: 3.5}
   m_LensShift: {x: 0, y: 0}
-  m_FocalLength: 9.588814
+  m_FocalLength: 2.5702193
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -376,7 +376,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 76.8
+  field of view: 68.5
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -1746,7 +1746,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   outlineMode: 1
-  outlineColor: {r: 0, g: 0.36078432, b: 1, a: 1}
+  outlineColor: {r: 0.17254902, g: 0.38431373, b: 0.84705883, a: 1}
   outlineWidth: 5
   precomputeOutline: 0
   bakeKeys: []
@@ -3240,7 +3240,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 380, y: 328}
+  m_AnchoredPosition: {x: 277.8, y: 328}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1259915583
@@ -3560,7 +3560,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   outlineMode: 1
-  outlineColor: {r: 0, g: 0.36078432, b: 1, a: 1}
+  outlineColor: {r: 0.17254902, g: 0.38431373, b: 0.84705883, a: 1}
   outlineWidth: 5
   precomputeOutline: 0
   bakeKeys: []
