@@ -31,12 +31,14 @@ public class CanvasFader : MonoBehaviour
         else
         {
             StartCoroutine(WaitAndFade(delayTime, true));
+            GetComponent<Canvas>().enabled = true;
         }
     }
 
     // Start is called before the first frame update
     void Start()
     {
+        GetComponent<Canvas>().enabled = false;
         _canvasUIGroup = GetComponent<CanvasGroup>();
     }
 
