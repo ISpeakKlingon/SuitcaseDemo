@@ -32,6 +32,8 @@ public abstract class SuitcaseBaseState
 
     public Collider SpinnerCollider;
 
+    public SuitcaseSpinner SuitcaseSpinner;
+
     public abstract void EnterState(SuitcaseStateManager suitcase);
     public abstract void UpdateState(SuitcaseStateManager suitcase);
 }

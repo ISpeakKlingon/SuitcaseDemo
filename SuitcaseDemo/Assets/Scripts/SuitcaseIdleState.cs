@@ -36,22 +36,13 @@ public class SuitcaseIdleState : SuitcaseBaseState
         SpinnerCollider.enabled = true;
 
         // spin suitcase back to zero
-        float _currentRot = suitcase.transform.localRotation.y;
-        /*
+        /*float _currentRot = suitcase.transform.localRotation.y;
+        
         if (_currentRot != 0f)
         {
-            float startTime = Time.time;
-
-            float _rot;
-
-            while (Time.time - startTime <= 1)
-            {
-                _rot = Mathf.Lerp(_currentRot, 0, Time.time - startTime);
-                //suitcase.transform.localRotation.y = _rot;
-                suitcase.transform.Rotate(Vector3.down, _rot, Space.World);
-
-                yield return 1;
-            }
+            Debug.Log("SuitcaseIdleState thinks that current rotation is NOT 0.");
+            SuitcaseSpinner = suitcase.GetComponent<SuitcaseSpinner>();
+            SuitcaseSpinner.ResetSpin();
         }*/
     }
 
