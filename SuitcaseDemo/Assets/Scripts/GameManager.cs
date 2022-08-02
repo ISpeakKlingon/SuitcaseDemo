@@ -39,6 +39,9 @@ public class GameManager : MonoBehaviour
     [Space(5)] // 5 pixels of spacing here.
     public string InteriorHeader;
     public string InteriorDescription;
+    [Space(5)] // 5 pixels of spacing here.
+    public string LockHeader;
+    public string LockDescription;
 
     private void Awake()
     {
